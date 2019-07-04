@@ -5,6 +5,7 @@ services:
   wordpress:
     image: wordpress
     restart: always
+    container_name: dev_wpmu
     depends_on:
       - db
     ports:
@@ -20,6 +21,7 @@ services:
 
   db:
     image: mysql:5.7
+    container_name: dev_wpmu_db
     restart: always
     environment:
       MYSQL_DATABASE: exampledb
@@ -31,6 +33,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:edge-4.8
+    container_name: dev_wpmu_phpmyadmin
     environment:
      - PMA_ARBITRARY=1
     restart: always
