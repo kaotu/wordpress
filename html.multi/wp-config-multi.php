@@ -73,6 +73,8 @@ define( 'WP_DEBUG', false );
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
 	$_SERVER['HTTPS'] = 'on';
 }
+define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST'] );
+
 /* That's all, stop editing! Happy publishing. */
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
