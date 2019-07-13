@@ -19,11 +19,11 @@
  */
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'exampledb');
+define( 'DB_NAME', 'db_name');
 /** MySQL database username */
-define( 'DB_USER', 'exampleuser');
+define( 'DB_USER', 'root_username');
 /** MySQL database password */
-define( 'DB_PASSWORD', 'examplepass');
+define( 'DB_PASSWORD', 'root_password');
 /** MySQL hostname */
 define( 'DB_HOST', 'db');
 /** Database Charset to use in creating database tables. */
@@ -77,14 +77,16 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 define( 'WP_ALLOW_MULTISITE', true );
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', 'khoto.tk');
+define('DOMAIN_CURRENT_SITE', 'phoenix_domain_name');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
+define('WP_ALLOW_REPAIR', true);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
 /** Sets up WordPress vars and included files. */
+
 require_once( ABSPATH . 'wp-settings.php' );
