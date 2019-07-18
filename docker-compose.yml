@@ -22,7 +22,7 @@ services:
      - ./html:/var/www/html
 
   db:
-    image: mysql:5.7
+    image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     container_name: dev_wpmu_db
@@ -33,6 +33,8 @@ services:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3306:3306
     volumes:
      - ./DB:/var/lib/mysql
 
