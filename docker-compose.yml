@@ -13,7 +13,7 @@ services:
     env_file:
       - ./.env
     environment:
-      WORDPRESS_DB_HOST: ${DB_HOST}
+      WORDPRESS_DB_HOST: ${DB_HOST}:3306
       WORDPRESS_DB_USER: ${ROOT_USERNAME}
       WORDPRESS_DB_PASSWORD: ${ROOT_PASSWORD}
       WORDPRESS_DB_NAME: ${DB_NAME}
@@ -22,9 +22,9 @@ services:
      - ./html:/var/www/html
 
   db:
-    image: mysql:5.7
+    image: mariadb:10.4.6
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    #restart: always
     container_name: dev_wpmu_db
     env_file:
       - ./.env
